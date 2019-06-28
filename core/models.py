@@ -18,9 +18,9 @@ class Category(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
-    author = models.ForeignKey(to=Author, on_delete=models.CASCADE, default=None)
+    author = models.ForeignKey(to=Author, null=True, on_delete=models.SET_NULL, default=None)
     description = models.TextField()
-    url = models.URLField()
+    url = models.URLField(unique=True)
     added_at = models.DateField(auto_now_add=True)
     categories = models.ManyToManyField(Category)
 

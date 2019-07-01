@@ -7,11 +7,11 @@ def index(request):
     """
 
     num_books = Book.objects.all().count()
-    num_authors = Author.objects.all().count()
+
 
     context = {
         'num_books': num_books,
-        'num_authors': num_authors,
+        
     }
 
     return render(request, 'index.html', context=context)

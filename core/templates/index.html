@@ -1,12 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Freeshelf Resource</h1>
-  <p>Welcome to our Library! This is a site for indexing free programming books online</p>
-  <h2>Quick Hits</h2>
-  <p>The library has the following record counts:</p>
-  <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-   <li><strong>Authors:</strong> {{ num_authors }}</li>
-  </ul>
+<h1>Freeshelf Resource</h1>
+<p>Welcome to our Library! This is a site for indexing free programming books online</p>
+<h2>Quick Hits</h2>
+<p>The library has the following record counts:</p>
+<ul>
+  <li><strong>Books:</strong> {{ num_books }}</li>
+</ul>
+<div>
+  {% for book in books %}
+    <h2>
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+    </h2>
+    <p>
+      
+    </p>
+    
+  {% endfor %}
+</div>
 {% endblock %}
